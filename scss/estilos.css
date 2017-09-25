@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ecf0f5;
+  color: #444;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main header */
+.main-header .navbar {
+  z-index: 1;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.main-header .navbar-default {
+  background-color: #e74c3c;
+  border-width: 0;
+}
+.main-header .navbar-default .navbar-header .navbar-brand {
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .main-header .navbar-default .navbar-header .navbar-brand {
+    line-height: 40px;
+  }
+}
+.main-header .navbar-default .navbar-header .navbar-brand:hover, .main-header .navbar-default .navbar-header .navbar-brand:focus {
+  color: #f8c9c4;
+}
+.main-header .navbar-default .navbar-nav img {
+  max-width: 40px;
+}
+.main-header .navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+.main-header .navbar-default .navbar-nav > li > a:hover, .main-header .navbar-default .navbar-nav > li > a:focus {
+  color: #f8c9c4;
+}
+.main-header .navbar-default .navbar-nav > .open > a {
+  background-color: #d62c1a;
+}
+.main-header .navbar-default .navbar-nav > .open > a:focus, .main-header .navbar-default .navbar-nav > .open > a:hover {
+  background-color: #d62c1a;
+}
+
+/* Main sidebar */
+.main-sidebar {
+  background-color: #222d32;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .main-sidebar {
+    padding-top: 70px;
+  }
+}
+.main-sidebar .nav-stacked > li + li {
+  margin-top: 0;
+}
+.main-sidebar .nav > li > a {
+  border-radius: 0;
+  color: #ecf0f5;
+}
+.main-sidebar .nav > li > a .glyphicon {
+  margin-right: 6px;
+}
+.main-sidebar .nav > li > a:hover, .main-sidebar .nav > li > a:focus {
+  background-color: #ecf0f5;
+  color: #222d32;
+}
+
+/* intro */
+.main-content-2 .intro {
+  margin: 8% auto 0;
+}
+.main-content-2 .intro h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.main-content-2 .intro h1 i {
+  font-size: 2.4em;
+  display: block;
+  padding-bottom: 10px;
+}
+.main-content-2 .form-wrapper {
+  background-color: #fff;
+  padding: 40px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  border: 1px solid #eee;
+}
+.main-content-2 form {
+  overflow: auto;
+  margin-bottom: 30px;
+}
+.main-content-2 div.user_restore {
+  text-align: center;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 200px;
+  padding: 20px 15px;
+  background-color: #ecf0f5;
+}
+.main-content .container-fluid {
+  position: relative;
+}
+.main-content h2 {
+  margin-bottom: 20px;
+}
+.main-content h2 + .btn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}
+.main-content .wrapper {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.main-content .wrapper table {
+  margin-bottom: 0;
+  background-color: #fff;
+}
+.main-content .complejo {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.main-content .complejo .col-md-5 {
+  height: 100%;
+  padding-right: 0;
+}
+.main-content .complejo .datos-complejo {
+  text-align: right;
+  padding: 15px;
+}
+
+/* Listado de complejos */
+/* Main footer */
+
+/*# sourceMappingURL=estilos.css.map */

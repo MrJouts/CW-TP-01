@@ -1,0 +1,228 @@
+// variables
+$color-principal : #ecf0f5;
+$color-secundario : #222d32;
+$color-header: #e74c3c;
+$color-tipografias-general: #444;
+
+$width-sidebar: 200px;
+$width-img-navbar: 40px;
+
+$height-navbar: $width-img-navbar + 30px;
+
+//meida queries
+$media-tablet: 768px;
+
+
+// mixins
+@mixin shadow ($x, $y, $blur,$color) {
+	box-shadow: $x $y $blur $color;
+	-moz-box-shadow: $x $y $blur $color;
+	-webkit-box-shadow: $x $y $blur $color;
+}
+
+// Estilos generales
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: $color-principal;
+	color: $color-tipografias-general;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Main header */
+.main-header {
+	.navbar {
+		z-index: 1;
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+
+	.navbar-default {
+		background-color: $color-header;
+		border-width: 0;
+
+		.navbar-header {		
+			.navbar-brand {
+				color: #fff;
+				@media screen and (min-width: $media-tablet) {
+					line-height: $width-img-navbar; 
+				}
+				&:hover, &:focus {
+				color: lighten($color-header, 30);
+				}
+			}
+		}
+
+		.navbar-nav {
+			img {
+				max-width: $width-img-navbar;
+			}
+			>li>a {
+				color: #fff;
+				&:hover, &:focus {
+					color: lighten($color-header, 30);
+				}
+			}
+			>.open>a {
+				background-color: darken($color-header, 10);
+				&:focus, &:hover {
+					background-color: darken($color-header, 10);
+				}
+			}
+		}
+	}
+}
+
+/* Main sidebar */
+.main-sidebar {
+	background-color: $color-secundario;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $width-sidebar;
+	height: 100%;
+	padding-top: $height-navbar - 20px;
+	@media screen and (min-width: $media-tablet) {
+		padding-top: $height-navbar;
+	}
+
+	.nav-stacked>li+li {
+		margin-top: 0;
+	}
+
+	.nav>li>a {
+		border-radius: 0;
+		color: $color-principal;
+		
+		.glyphicon {
+			margin-right: 6px;
+		}
+
+		&:hover, &:focus {
+			background-color: $color-principal;
+			color: $color-secundario;
+		}
+	}
+}
+
+
+
+// configuraciones de la pantalla de login
+
+/* intro */
+
+.main-content-2 {
+
+	.intro {
+			margin: 8% auto 0;
+
+			h1 {
+			margin-bottom: 20px;
+			text-align: center;
+
+			i {
+				font-size: 2.4em;
+				display: block;
+				padding-bottom: 10px;
+			}
+		}
+	}
+	
+	.form-wrapper {
+		background-color: #fff;
+		padding: 40px 20px;
+		@include shadow(0, 1px, 3px, rgba(0,0,0,.13) );
+		border: 1px solid #eee;
+	}
+
+	form {
+		overflow: auto;
+		margin-bottom: 30px;
+	}
+
+	div.user_restore {
+		text-align: center
+	}
+}
+
+
+
+
+
+
+
+/* Main content */
+.main-content {
+	margin-left: $width-sidebar;
+	padding: 20px 15px;
+	background-color: $color-principal;
+	// min-height: 916px;
+	
+	.container-fluid {
+		position: relative;
+	}
+
+	h2 {
+		margin-bottom: 20px;
+	}
+	
+	h2 + .btn {
+		position: absolute;
+		top: 0px;
+		right: 15px;
+	}
+
+	.wrapper {
+		border: 1px solid #ccc;
+		border-radius: 3px;	
+
+		table {
+			margin-bottom: 0;
+			background-color: #fff;
+		}
+	}
+	
+	.complejo {
+		border: 1px solid #ddd;
+		background-color: #fff;
+		margin-bottom: 15px;
+
+		.col-md-5 {
+			height: 100%;
+			padding-right: 0;
+		}
+
+		.datos-complejo {
+			text-align: right;
+			padding: 15px;
+
+		
+		}
+	}
+
+}
+
+
+//main content 3
+
+/* Listado de complejos */
+
+
+
+
+
+
+
+/* Main footer */
+
+
+
