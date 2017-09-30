@@ -80,73 +80,80 @@
     	</aside>
 
     	<main class="main-content">
-    		<section class="container-fluid">
+    		<section class="container-fluid pelicula">
 
-    		<h2>Cartelera:</h2>
+    		<h2>Editar Película:</h2>
+
+					<form class="form-horizontal">
+					  <div class="form-group">
+					    <label for="titulo" class="col-sm-2 control-label">Titulo</label>
+					    <div class="col-sm-4">
+					      <input type="text" class="form-control" id="titulo">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="genero" class="col-sm-2 control-label">Genero</label>
+					    <div class="col-sm-4">
+					      <input type="text" class="form-control" id="genero">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="fecha_estreno" class="col-sm-2 control-label">Fecha de estreno</label>
+					    <div class="col-sm-4">
+					      <input type="date" class="form-control" id="fecha_estreno">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="estado" class="col-sm-2 control-label">Estado</label>
+					    <div class="col-sm-4">
+					    	<select class="form-control" name="estado" id="estado">
+					    		<option value="">En cartelera</option>
+					    		<option value="">Proximamente</option>
+					    		<option value="">Fuera de cartelera</option>
+					    	</select>
+					    </div>
+					  </div>
+
+
+					  <div class="form-group">
+					  	<div class="col-sm-2 control-label">Genero</div>
+					    <div class="col-sm-3">
+					      <div class="checkbox">
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					        <label>
+					          <input type="checkbox"> Comedia
+					        </label>
+					          
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-4">
+					      <button type="submit" class="btn btn-default pull-right">Actualizar datos</button>
+					    </div>
+					  </div>
+					  
+					</form>
 					
-				<button class="btn btn-primary">Agregar Película</button>
-
-    			<div class="row">
-    				<div class="col-sm-12">
-    					<div class="wrapper">
-  							<div class="table-responsive">
-						      <table class="table">
-						        <thead>
-						          <tr>
-						            <th><i class="glyphicon glyphicon-picture"></i></th>
-						            <th>Nombre</th>
-						            <th>Estado</th>
-						            <th>Acciones</th>
-						          </tr>
-						        </thead>
-						        <tbody>
-						          <tr>
-						            <th scope="row">Normal</th>
-						            <td>Default</td>
-						            <td>Default color to a particular row or cell</td>
-						            <td>Default color to a particular row or cell</td>
-						          </tr>
-						          <tr class="active">
-						            <th scope="row">active</th>
-						            <td>Gray</td>
-						            <td>Active color to a particular row or cell</td>
-						            <td>Active color to a particular row or cell</td>
-						          </tr>
-						          <tr>
-						            <th scope="row">success</th>
-						            <td>Green</td>
-						            <td>A successful or positive action</td>
-						            <td>A successful or positive action</td>
-						          </tr>
-						          <tr>
-						            <th scope="row">info</th>
-						            <td>Blue</td>
-						            <td>A neutral informative change or action</td>
-						            <td>A neutral informative change or action</td>
-						          </tr>
-						          <tr>
-						            <th scope="row">warning</th>
-						            <td>Yellow</td>
-						            <td>A warning that might need attention, but not too scary</td>
-						            <td>A warning that might need attention, but not too scary</td>
-						          </tr>
-						          <tr>
-						            <th scope="row">danger</th>
-						            <td>Red</td>
-						            <td>Dangerous or potentially negative action</td>
-						            <td>
-						            	<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Editar"><i class="glyphicon glyphicon-pencil"></i> <span class="sr-only">Editar</span></button>
-						            	<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Borrar"><i class="glyphicon glyphicon-remove"></i> <span class="sr-only">Borrar</span></button>
-						            </td>
-						          </tr>
-						        </tbody>
-						      </table>
-
-	  						</div><!-- table-responsive -->
-				    	</div><!-- wrapper -->
-    				</div><!-- col-sm-12 -->
-    			</div><!-- row -->
-    		</section>
+				
 
     	</main>
 			
