@@ -13,6 +13,65 @@ h1, h2, h3 {
   padding: 0;
 }
 
+/* intro */
+.intro-content .intro {
+  margin: 8% auto 0;
+}
+.intro-content .intro h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.intro-content .intro h1 i {
+  font-size: 2.4em;
+  display: block;
+  padding-bottom: 10px;
+}
+.intro-content .form-wrapper {
+  background-color: #fff;
+  padding: 40px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  border: 1px solid #eee;
+}
+.intro-content form {
+  overflow: auto;
+  margin-bottom: 30px;
+}
+.intro-content div.user_restore {
+  text-align: center;
+}
+
+/* Main sidebar */
+.main-sidebar {
+  background-color: #222d32;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .main-sidebar {
+    padding-top: 70px;
+  }
+}
+.main-sidebar .nav-stacked > li + li {
+  margin-top: 0;
+}
+.main-sidebar .nav > li > a {
+  border-radius: 0;
+  color: #ecf0f5;
+}
+.main-sidebar .nav > li > a .glyphicon {
+  margin-right: 6px;
+}
+.main-sidebar .nav > li > a:hover, .main-sidebar .nav > li > a:focus {
+  background-color: #ecf0f5;
+  color: #222d32;
+}
+
 /* Main header */
 .main-header .navbar {
   z-index: 1;
@@ -48,65 +107,6 @@ h1, h2, h3 {
 }
 .main-header .navbar-default .navbar-nav > .open > a:focus, .main-header .navbar-default .navbar-nav > .open > a:hover {
   background-color: #d62c1a;
-}
-
-/* Main sidebar */
-.main-sidebar {
-  background-color: #222d32;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  padding-top: 50px;
-}
-@media screen and (min-width: 768px) {
-  .main-sidebar {
-    padding-top: 70px;
-  }
-}
-.main-sidebar .nav-stacked > li + li {
-  margin-top: 0;
-}
-.main-sidebar .nav > li > a {
-  border-radius: 0;
-  color: #ecf0f5;
-}
-.main-sidebar .nav > li > a .glyphicon {
-  margin-right: 6px;
-}
-.main-sidebar .nav > li > a:hover, .main-sidebar .nav > li > a:focus {
-  background-color: #ecf0f5;
-  color: #222d32;
-}
-
-/* intro */
-.main-content-2 .intro {
-  margin: 8% auto 0;
-}
-.main-content-2 .intro h1 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.main-content-2 .intro h1 i {
-  font-size: 2.4em;
-  display: block;
-  padding-bottom: 10px;
-}
-.main-content-2 .form-wrapper {
-  background-color: #fff;
-  padding: 40px 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-  border: 1px solid #eee;
-}
-.main-content-2 form {
-  overflow: auto;
-  margin-bottom: 30px;
-}
-.main-content-2 div.user_restore {
-  text-align: center;
 }
 
 /* Main content */
@@ -148,7 +148,6 @@ h1, h2, h3 {
   padding: 15px;
 }
 
-/* Listado de complejos */
 /* Main footer */
 
 /*# sourceMappingURL=estilos.css.map */

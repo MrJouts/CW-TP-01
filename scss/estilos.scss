@@ -37,6 +37,75 @@ h1, h2, h3 {
 	padding: 0;
 }
 
+// configuraciones de la pantalla de login
+
+/* intro */
+
+.intro-content {
+	
+	.intro {
+			margin: 8% auto 0;
+
+			h1 {
+			margin-bottom: 20px;
+			text-align: center;
+
+			i {
+				font-size: 2.4em;
+				display: block;
+				padding-bottom: 10px;
+			}
+		}
+	}
+	
+	.form-wrapper {
+		background-color: #fff;
+		padding: 40px 20px;
+		@include shadow(0, 1px, 3px, rgba(0,0,0,.13) );
+		border: 1px solid #eee;
+	}
+
+	form {
+		overflow: auto;
+		margin-bottom: 30px;
+	}
+
+	div.user_restore {
+		text-align: center
+	}
+}
+
+/* Main sidebar */
+.main-sidebar {
+	background-color: $color-secundario;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $width-sidebar;
+	height: 100%;
+	padding-top: $height-navbar - 20px;
+	@media screen and (min-width: $media-tablet) {
+		padding-top: $height-navbar;
+	}
+
+	.nav-stacked>li+li {
+		margin-top: 0;
+	}
+
+	.nav>li>a {
+		border-radius: 0;
+		color: $color-principal;
+		
+		.glyphicon {
+			margin-right: 6px;
+		}
+
+		&:hover, &:focus {
+			background-color: $color-principal;
+			color: $color-secundario;
+		}
+	}
+}
 
 /* Main header */
 .main-header {
@@ -82,77 +151,10 @@ h1, h2, h3 {
 	}
 }
 
-/* Main sidebar */
-.main-sidebar {
-	background-color: $color-secundario;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: $width-sidebar;
-	height: 100%;
-	padding-top: $height-navbar - 20px;
-	@media screen and (min-width: $media-tablet) {
-		padding-top: $height-navbar;
-	}
-
-	.nav-stacked>li+li {
-		margin-top: 0;
-	}
-
-	.nav>li>a {
-		border-radius: 0;
-		color: $color-principal;
-		
-		.glyphicon {
-			margin-right: 6px;
-		}
-
-		&:hover, &:focus {
-			background-color: $color-principal;
-			color: $color-secundario;
-		}
-	}
-}
 
 
 
-// configuraciones de la pantalla de login
 
-/* intro */
-
-.main-content-2 {
-
-	.intro {
-			margin: 8% auto 0;
-
-			h1 {
-			margin-bottom: 20px;
-			text-align: center;
-
-			i {
-				font-size: 2.4em;
-				display: block;
-				padding-bottom: 10px;
-			}
-		}
-	}
-	
-	.form-wrapper {
-		background-color: #fff;
-		padding: 40px 20px;
-		@include shadow(0, 1px, 3px, rgba(0,0,0,.13) );
-		border: 1px solid #eee;
-	}
-
-	form {
-		overflow: auto;
-		margin-bottom: 30px;
-	}
-
-	div.user_restore {
-		text-align: center
-	}
-}
 
 
 
@@ -203,21 +205,11 @@ h1, h2, h3 {
 
 		.datos-complejo {
 			text-align: right;
-			padding: 15px;
-
-		
+			padding: 15px;	
 		}
 	}
 
 }
-
-
-//main content 3
-
-/* Listado de complejos */
-
-
-
 
 
 
