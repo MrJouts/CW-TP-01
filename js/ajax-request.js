@@ -8,13 +8,16 @@ cv.ajax = function(options) {
 		data: null,
 		success: function() {},
 		error: function() {}
-	}
+	};
+
 
 	var o = cv.merge(defaults, options);
 
+	console.log (o);
+
 	var xhr = new XMLHttpRequest();
 
-	if (o.method.toUppercase() == 'GET') {
+	if (o.method.toUpperCase() == 'GET') {
 		if (o.data != null) {
 			o.url += '?' + o.data;
 			o.data = null;
@@ -39,7 +42,10 @@ cv.ajax = function(options) {
 	}
 
 	xhr.send(o.data);
+};
 
+cv.$ = function(id) {
+	return document.getElementById(id);
 }
 
 cv.merge = function(obj1, obj2) {
