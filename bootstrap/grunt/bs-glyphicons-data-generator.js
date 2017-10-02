@@ -10,7 +10,7 @@
 var fs = require('fs');
 
 module.exports = function generateGlyphiconsData(grunt) {
-  // Pass encoding, utf8, so `readFileSync` will return a string instead of a
+  // Pass encoding, utf8, so 'readFileSync' will return a string instead of a
   // buffer
   var glyphiconsFile = fs.readFileSync('less/glyphicons.less', 'utf8');
   var glyphiconsLines = glyphiconsFile.split('\n');
@@ -28,7 +28,7 @@ module.exports = function generateGlyphiconsData(grunt) {
     }
   }
 
-  // Create the `_data` directory if it doesn't already exist
+  // Create the '_data' directory if it doesn't already exist
   if (!fs.existsSync('docs/_data')) {
     fs.mkdirSync('docs/_data');
   }

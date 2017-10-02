@@ -30,11 +30,11 @@ To get started, check out <http://getbootstrap.com>!
 Several quick start options are available:
 
 * [Download the latest release](https://github.com/twbs/bootstrap/archive/v3.3.7.zip).
-* Clone the repo: `git clone https://github.com/twbs/bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install bootstrap`.
-* Install with [npm](https://www.npmjs.com): `npm install bootstrap@3`.
-* Install with [Meteor](https://www.meteor.com): `meteor add twbs:bootstrap`.
-* Install with [Composer](https://getcomposer.org): `composer require twbs/bootstrap`.
+* Clone the repo: 'git clone https://github.com/twbs/bootstrap.git'.
+* Install with [Bower](http://bower.io): 'bower install bootstrap'.
+* Install with [npm](https://www.npmjs.com): 'npm install bootstrap@3'.
+* Install with [Meteor](https://www.meteor.com): 'meteor add twbs:bootstrap'.
+* Install with [Composer](https://getcomposer.org): 'composer require twbs/bootstrap'.
 
 Read the [Getting started page](http://getbootstrap.com/getting-started/) for information on the framework contents, templates and examples, and more.
 
@@ -42,7 +42,7 @@ Read the [Getting started page](http://getbootstrap.com/getting-started/) for in
 
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
-```
+'''
 bootstrap/
 ├── css/
 │   ├── bootstrap.css
@@ -62,9 +62,9 @@ bootstrap/
     ├── glyphicons-halflings-regular.ttf
     ├── glyphicons-halflings-regular.woff
     └── glyphicons-halflings-regular.woff2
-```
+'''
 
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). CSS [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) (`bootstrap.*.map`) are available for use with certain browsers' developer tools. Fonts from Glyphicons are included, as is the optional Bootstrap theme.
+We provide compiled CSS and JS ('bootstrap.*'), as well as compiled and minified CSS and JS ('bootstrap.min.*'). CSS [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) ('bootstrap.*.map') are available for use with certain browsers' developer tools. Fonts from Glyphicons are included, as is the optional Bootstrap theme.
 
 
 ## Bugs and feature requests
@@ -80,10 +80,10 @@ Bootstrap's documentation, included in this repo in the root directory, is built
 
 ### Running documentation locally
 
-1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) and other Ruby dependencies with `bundle install`.
+1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) and other Ruby dependencies with 'bundle install'.
    **Note for Windows users:** Read [this unofficial guide](http://jekyll-windows.juthilo.com/) to get Jekyll up and running without problems.
-2. From the root `/bootstrap` directory, run `bundle exec jekyll serve` in the command line.
-4. Open `http://localhost:9001` in your browser, and voilà.
+2. From the root '/bootstrap' directory, run 'bundle exec jekyll serve' in the command line.
+4. Open 'http://localhost:9001' in your browser, and voilà.
 
 Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
 
@@ -100,7 +100,7 @@ Please read through our [contributing guidelines](https://github.com/twbs/bootst
 
 Moreover, if your pull request contains JavaScript patches or features, you must include [relevant unit tests](https://github.com/twbs/bootstrap/tree/master/js/tests). All HTML and CSS should conform to the [Code Guide](https://github.com/mdo/code-guide), maintained by [Mark Otto](https://github.com/mdo).
 
-**Bootstrap v3 is now closed off to new features.** It has gone into maintenance mode so that we can focus our efforts on [Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev), the future of the framework. Pull requests which add new features (rather than fix bugs) should target [Bootstrap v4 (the `v4-dev` git branch)](https://github.com/twbs/bootstrap/tree/v4-dev) instead.
+**Bootstrap v3 is now closed off to new features.** It has gone into maintenance mode so that we can focus our efforts on [Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev), the future of the framework. Pull requests which add new features (rather than fix bugs) should target [Bootstrap v4 (the 'v4-dev' git branch)](https://github.com/twbs/bootstrap/tree/v4-dev) instead.
 
 Editor preferences are available in the [editor config](https://github.com/twbs/bootstrap/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
@@ -112,9 +112,9 @@ Get updates on Bootstrap's development and chat with the project maintainers and
 * Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
 * Read and subscribe to [The Official Bootstrap Blog](http://blog.getbootstrap.com).
 * Join [the official Slack room](https://bootstrap-slack.herokuapp.com).
-* Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
-* Implementation help may be found at Stack Overflow (tagged [`twitter-bootstrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
-* Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
+* Chat with fellow Bootstrappers in IRC. On the 'irc.freenode.net' server, in the '##bootstrap' channel.
+* Implementation help may be found at Stack Overflow (tagged ['twitter-bootstrap-3'](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
+* Developers should use the keyword 'bootstrap' on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
 
 
 ## Versioning
