@@ -7,6 +7,7 @@
           Hotel California
         </h1>
         <div class="form-wrapper">
+
           <form id="login">
             <div class="form-group">
               <label for="usuario">Nombre de usuario o dirección de email</label>
@@ -21,10 +22,9 @@
           </form>
           
           <div class="user_restore">  
-            <a href="#">
-              <span>¿Olvidaste tu usuario o contraseña?</span>
-            </a>
+              <span id="salida"></span>
           </div>
+
         </div><!-- form-wrapper -->
       </div><!-- col-sm-3 -->
     </div><!-- row -->

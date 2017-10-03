@@ -48,7 +48,7 @@ CREATE TABLE reservas(
 
 INSERT INTO usuario (NOMBRE, APELLIDO, NOMBRE_USUARIO, EMAIL, PASSWORD)
 VALUES 
-	('Carlos', 'Martinez', 'cmartinez', 'cmartinez@medicus.com', '1234');
+	('Carlos', 'Martinez', 'cm', 'c@m.com', '1234');
 
 INSERT INTO habitaciones (NUMERO_HABITACION, TIPO, ESTADO)
 VALUES

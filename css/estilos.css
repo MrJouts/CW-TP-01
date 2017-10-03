@@ -52,11 +52,6 @@ h1, h2, h3 {
   height: 100%;
   padding-top: 50px;
 }
-@media screen and (min-width: 768px) {
-  .main-sidebar {
-    padding-top: 70px;
-  }
-}
 .main-sidebar .nav-stacked > li + li {
   margin-top: 0;
 }
@@ -85,16 +80,8 @@ h1, h2, h3 {
 .main-header .navbar-default .navbar-header .navbar-brand {
   color: #fff;
 }
-@media screen and (min-width: 768px) {
-  .main-header .navbar-default .navbar-header .navbar-brand {
-    line-height: 40px;
-  }
-}
 .main-header .navbar-default .navbar-header .navbar-brand:hover, .main-header .navbar-default .navbar-header .navbar-brand:focus {
   color: #f8c9c4;
-}
-.main-header .navbar-default .navbar-nav img {
-  max-width: 40px;
 }
 .main-header .navbar-default .navbar-nav > li > a {
   color: #fff;
@@ -120,11 +107,10 @@ h1, h2, h3 {
 }
 .main-content h2 {
   margin-bottom: 20px;
+  display: inline-block;
 }
 .main-content h2 + .btn {
-  position: absolute;
-  top: 0px;
-  right: 15px;
+  vertical-align: top;
 }
 .main-content .wrapper {
   border: 1px solid #ccc;

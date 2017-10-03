@@ -25,18 +25,17 @@ $hay_error = false;
 switch ( $seccion ) {
 	case 'reservas': 
 		$archivo = 'reservas.php'; 
-		$icono = 'glyphicon glyphicon-calendar';
 	break;
 	case 'habitaciones': 
 		$archivo = 'habitaciones.php'; 
-		$icono = 'glyphicon glyphicon-film';
 	break;	
 	case 'perfil': 
 		$archivo = 'perfil.php'; 
-		$icono = 'glyphicon glyphicon-user';
+	break;	
+	case 'logout': 
+		$archivo = 'logout.php'; 
 	break;
 	default: 
 		$hay_error= true;
 		$archivo = 'reservas.php';
-		$icono = 'glyphicon glyphicon-calendar';
 }

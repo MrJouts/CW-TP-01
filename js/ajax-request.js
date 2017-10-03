@@ -1,8 +1,8 @@
 /* Archivo Ajax Request */
 
-var cv = {};
+var hc = {};
 
-cv.ajax = function(options) {
+hc.ajax = function(options) {
 	var defaults = {
 		method: 'GET',
 		data: null,
@@ -10,10 +10,7 @@ cv.ajax = function(options) {
 		error: function() {}
 	};
 
-
-	var o = cv.merge(defaults, options);
-
-	console.log (o);
+	var o = hc.merge(defaults, options);
 
 	var xhr = new XMLHttpRequest();
 
@@ -44,11 +41,11 @@ cv.ajax = function(options) {
 	xhr.send(o.data);
 };
 
-cv.$ = function(id) {
+hc.$ = function(id) {
 	return document.getElementById(id);
 }
 
-cv.merge = function(obj1, obj2) {
+hc.merge = function(obj1, obj2) {
 	var salida = {};
 	for(var i in obj1) {
 		salida[i] = obj1[i];

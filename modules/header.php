@@ -9,7 +9,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Cine Victoria</a>
+	      <a class="navbar-brand" href="#">Hotel California</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,12 +17,11 @@
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	          	<img class="img-circle" src="http://fillmurray.com/100/100" alt="">
-	          	Emiliano
+	          	<?php echo $_SESSION['nombre_usuario']; ?>
 	          </a>
 	          <ul class="dropdown-menu">
-	            <li><a href="#"><i class="glyphicon glyphicon-user"></i> Perfíl</a></li>
-	            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i> Salir</a></li>
+	            <!-- <li><a href="#"><i class="glyphicon glyphicon-user"></i> Perfíl</a></li> -->
+	            <li><a href="index.php?cat=logout"><i class="glyphicon glyphicon-log-out"></i> Salir</a></li>
 	          </ul>
 	        </li>
 	      </ul>

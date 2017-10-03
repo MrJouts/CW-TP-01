@@ -17,7 +17,7 @@
 
     <div class="wrapper">
 
-    <?php if (true) {
+    <?php if (!isset($_SESSION['nombre_usuario'])) {
       include 'modules/login.php';
     }  else {
     ?>

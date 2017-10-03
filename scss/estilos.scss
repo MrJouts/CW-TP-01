@@ -83,10 +83,11 @@ h1, h2, h3 {
 	left: 0;
 	width: $width-sidebar;
 	height: 100%;
-	padding-top: $height-navbar - 20px;
-	@media screen and (min-width: $media-tablet) {
-		padding-top: $height-navbar;
-	}
+	padding-top: 50px;
+	// padding-top: $height-navbar - 20px;
+	// @media screen and (min-width: $media-tablet) {
+	// 	padding-top: $height-navbar;
+	// }
 
 	.nav-stacked>li+li {
 		margin-top: 0;
@@ -122,9 +123,7 @@ h1, h2, h3 {
 		.navbar-header {		
 			.navbar-brand {
 				color: #fff;
-				@media screen and (min-width: $media-tablet) {
-					line-height: $width-img-navbar; 
-				}
+
 				&:hover, &:focus {
 				color: lighten($color-header, 30);
 				}
@@ -132,9 +131,6 @@ h1, h2, h3 {
 		}
 
 		.navbar-nav {
-			img {
-				max-width: $width-img-navbar;
-			}
 			>li>a {
 				color: #fff;
 				&:hover, &:focus {
@@ -168,12 +164,14 @@ h1, h2, h3 {
 
 	h2 {
 		margin-bottom: 20px;
+		display: inline-block;
 	}
 	
 	h2 + .btn {
-		position: absolute;
-		top: 0px;
-		right: 15px;
+		// position: absolute;
+		// top: 0px;
+		// right: 15px;
+		vertical-align: top;
 	}
 
 	.wrapper {

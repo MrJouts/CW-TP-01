@@ -1,28 +1,39 @@
 window.addEventListener('DOMContentLoaded', function() {
-	// Capturamos el form.
-	var formLogin = cv.$('login');
 
-	formLogin.addEventListener('submit', function(ev) {
-		ev.preventDefault();
+	var formLogin = hc.$('login');
 
-		// Capturamos los campos del form.
-		var usuarioInput = cv.$('usuario');
-		var passwordInput = cv.$('password');
+	if (formLogin) {
 
-		var data = {
-			usuario : usuarioInput.value,
-			password: passwordInput.value
-		};
+		formLogin.addEventListener('submit', function(ev) {
+			ev.preventDefault();
 
-		cv.ajax({
-			method: "POST",
-			url: 'api/login.php',
-			// Stringificamos la data para poder
-			// mandarla como texto en el send.
-			data: JSON.stringify(data),
-			success: function(rta) {
-				console.log(rta);
-			}
-		});
-	}, false);
+			var usuarioInput = hc.$('usuario');
+			var passwordInput = hc.$('password');
+
+			var data = {
+				usuario : usuarioInput.value,
+				password: passwordInput.value
+			};
+
+			hc.ajax({
+				method: "POST",
+				url: 'api/login.php',
+				// Stringificamos la data para poder
+				// mandarla como texto en el send.
+				data: JSON.stringify(data),
+				success: function(rta) {
+				
+					if (rta == 'Los datos ingresados son incorrectos' ) {
+						hc.$('salida').innerHTML = rta;
+					} else {
+						console.log(rta);
+
+						
+						location = "index.php?cat=reservas";
+
+					}
+				}
+			});
+		}, false);
+	}
 }, false);
