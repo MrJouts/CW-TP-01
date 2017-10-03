@@ -1,14 +1,13 @@
 <main class="intro-content">
-  
   <section class="container intro">
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <h1>
           <i class="glyphicon glyphicon-film"></i>
-          Cine Victoria
+          Hotel California
         </h1>
         <div class="form-wrapper">
-          <form>
+          <form id="login">
             <div class="form-group">
               <label for="usuario">Nombre de usuario o dirección de email</label>
               <input type="text" class="form-control" id="usuario" name="usuario">
@@ -18,7 +17,7 @@
               <input type="password" class="form-control" id="password" name="password">
             </div>
 
-            <input class="btn btn-primary pull-right" type="submit" value="Acceder">
+            <button class="btn btn-primary pull-right">Acceder</button>
           </form>
           
           <div class="user_restore">  
