@@ -14,7 +14,7 @@
 
   </head>
   <body>
-
+    <!-- test -->
     <div class="wrapper">
 
     <?php if (!isset($_SESSION['nombre_usuario'])) {
