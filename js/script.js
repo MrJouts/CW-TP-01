@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 	// activar tooltip
-  $('[data-toggle="tooltip"]').tooltip();
+  //$('[data-toggle="tooltip"]').tooltip();
 
 }, false);
+

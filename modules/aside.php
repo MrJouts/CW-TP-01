@@ -16,7 +16,6 @@
 
 	  <li role="presentation" <?php echo $activo; ?>>
 	  	<a href="index.php?cat=<?php echo $link; ?>">
-		  	<i class="<?php echo $icono; ?>"></i>
 	  		<?php echo $txt; ?>
 	  	</a>
 	  </li>

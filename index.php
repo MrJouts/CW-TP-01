@@ -1,4 +1,4 @@
-<?php include 'setup/config.php' ?>
+<?php include 'setup/config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +14,7 @@
 
   </head>
   <body>
-    <!-- test -->
+    
     <div class="wrapper">
 
     <?php if (!isset($_SESSION['nombre_usuario'])) {
@@ -51,5 +51,7 @@
     <!-- <script src="js/cargarHabitacion.js"></script> -->
 
     <script src="js/login.js"></script>
+    <script src="js/reservas-leer.js"></script>
+    <script src="js/reservas-alta.js"></script>
   </body>
 </html>

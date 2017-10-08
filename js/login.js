@@ -30,6 +30,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 						
 						location = "index.php?cat=reservas";
+						//location = "reservas.php";
 
 					}
 				}

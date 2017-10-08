@@ -34,7 +34,7 @@ class Usuario implements JsonSerializable
 	/*
 	 * Validacion de datos
 	 */
-	public function userValidate($usuario = null, $password = null) 
+	public static function userValidate($usuario = null, $password = null) 
 	{
 		if ($usuario !== null && $password !== null) {
 			$db = DBConnection::getConnection();
@@ -63,7 +63,7 @@ class Usuario implements JsonSerializable
 				echo json_encode($obj);
 				
 			} else {
-				throw new Exception('Los datos ingresados son incorrectos');
+				echo 'Los datos ingresados son incorrectos';
 			}		
 		}
 	}
