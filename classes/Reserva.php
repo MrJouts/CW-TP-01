@@ -72,10 +72,43 @@ class Reserva implements JsonSerializable
 		while($reserva = $stmt->fetch()) {
 			$obj = new Reserva;
 			$obj->loadDataFromArray($reserva);
+
+			$obj->fk_huesped = Huesped::getNombreCompleto($obj->fk_huesped);
+			$obj->fk_habitacion = Habitacion::getNumeroHabitacion($obj->fk_habitacion);
+			
 			$salida[] = $obj;
 		}
 		return $salida;
 	}
 
+	public static function cargarReserva($formData) 
+	{
+		$db = DBConnection::getConnection();
+		$query = "INSERT INTO reservas (FECHA_INICIO, FECHA_SALIDA, FKHABITACION, FKHUESPED)
+			VALUES (:fecha_inicio, :fecha_salida, :fk_habitacion, :fk_huesped)";
+		$stmt = $db->prepare($query);
+		$exito = $stmt->execute([
+			'fecha_inicio' => $formData['FECHA_INICIO'],
+			'fecha_salida' => $formData['FECHA_SALIDA'],
+			'fk_habitacion' => '1',
+			'fk_huesped' => '1'
+		]);
+
+		if($exito) {
+			$obj = new Reserva;
+			// Obtenemos el id del
+			// registro que insertamos.
+			$formData['ID_RESERVA'] = $db->lastInsertId();
+			$formData['FKHABITACION'] = '1';
+			$formData['FKHUESPED'] = '1';
+			$obj->loadDataFromArray($formData);
+
+			return $obj;
+
+
+		} else {
+			echo "error";
+		}
+	}
 
 }

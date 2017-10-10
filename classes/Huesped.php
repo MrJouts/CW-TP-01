@@ -9,13 +9,23 @@ class Huesped implements JsonSerializable
 	public $id_huesped;
 	public $nombre;
 	public $apellido;
+	public $nombreCompleto;
 	public $dierccion;
 	public $email;
 	public $telefono;
 
 	function __construct($id = null)
 	{
+		if($id !== null) {
+			$db = DBConnection::getConnection();
+			$query = "SELECT * FROM huespedes
+						WHERE ID_HUESPED = ?";
+			$stmt = $db->prepare($query);
+			$stmt->execute([$id]);
 
+			$fila = $stmt->fetch();
+			$this->loadDataFromArray($fila);
+		}
 	}
 
 
@@ -65,20 +75,38 @@ class Huesped implements JsonSerializable
 	}
 
 
-	public static getNombreCompleto($id = null) {
+	public static function getNombreCompleto($id = null) 
+	{
 		$db = DBConnection::getConnection();
-		$query = "SELECT NOMBRE,APELLIDO AS nombreCompleto FROM huespedes WHERE ID_HUESPED = ? LIMIT = 1";
+		$query = "SELECT CONCAT(NOMBRE,' ', APELLIDO)as nombreCompleto FROM huespedes WHERE ID_HUESPED = ? LIMIT 1";
 		$stmt = $db->prepare($query);
 		$stmt->execute([$id]);
 
-		$salida = [];
+		if ($fila = $stmt->fetch()) {
+			$huesped = new Huesped;
+			//$huesped->loadDataFromArray($fila);
+			$huesped->nombreCompleto = $fila['nombreCompleto'];
 
-		while($huesped = $stmt->fetch()) {
-			$obj = new Reserva;
-			$obj->loadDataFromArray($huesped);
-			$salida[] = $obj;
+			return $huesped->nombreCompleto;
+		} else {
+			return null;
 		}
-		return $salida;
+
+
+
+
+		// $salida = [];
+
+		// while($fila = $stmt->fetch()) {
+		// 	$obj = new Huesped;
+		// 	$obj->loadDataFromArray($fila);
+		// 	$salida[] = $obj;
+		// }
+		// return $salida;
+	}
+
+	public static function test($id = null) {
+		echo $id;
 	}
 
 }
