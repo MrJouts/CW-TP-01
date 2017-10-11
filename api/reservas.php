@@ -10,4 +10,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
 	require 'reservas-alta.php';
 } else if($_SERVER['REQUEST_METHOD'] == "PUT") {
 	require 'reservas-editar.php';
+} else if($_SERVER['REQUEST_METHOD'] == "DELETE") {
+	require 'reservas-borrar.php';
 }

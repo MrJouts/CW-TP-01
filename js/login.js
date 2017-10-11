@@ -18,8 +18,6 @@ window.addEventListener('DOMContentLoaded', function() {
 			hc.ajax({
 				method: "POST",
 				url: 'api/login.php',
-				// Stringificamos la data para poder
-				// mandarla como texto en el send.
 				data: JSON.stringify(data),
 				success: function(rta) {
 				
@@ -28,7 +26,6 @@ window.addEventListener('DOMContentLoaded', function() {
 					} else {
 						console.log(rta);
 
-						
 						location = "index.php?cat=reservas";
 						//location = "reservas.php";
 

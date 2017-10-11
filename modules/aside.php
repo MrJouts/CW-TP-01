@@ -2,35 +2,24 @@
 	<ul class="nav nav-pills nav-stacked">
 		
 		<?php 
-
-
 		foreach ( $botones as $link => $txt ) {
 			if ( $seccion == $link ) {
 				$activo = 'class="active"';
 			} else {
 				$activo = '';
 			}
+		?>
 
-			?>
-
-
-	  <li role="presentation" <?php echo $activo; ?>>
-	  	<a href="index.php?cat=<?php echo $link; ?>">
-	  		<?php echo $txt; ?>
-	  	</a>
-	  </li>
-
+		  <li role="presentation" <?php echo $activo; ?>>
+		  	<a href="index.php?cat=<?php echo $link; ?>">
+		  		<?php echo $txt; ?>
+		  	</a>
+		  </li>
 
 		<?php
 		}
 		?>
 
 	</ul>
-
-			
-
-				
-
-
 
 </aside>

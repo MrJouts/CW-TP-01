@@ -5,7 +5,7 @@
 
 	<form  id="cargarHabitacion" class="form-horizontal">
 	  <div class="form-group">
-	    <label for="numeroHabitacion" class="col-sm-2 control-label">Numero Habitacion: </label>
+	    <label for="numeroHabitacion" class="col-sm-2 control-label">Nombre: </label>
 	    <div class="col-sm-4">
 	      <input type="text" class="form-control" id="numeroHabitacion">
 	    </div>

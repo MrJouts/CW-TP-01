@@ -8,9 +8,3 @@ $data = json_decode($entrada, true);
 $reserva = Reserva::cargarReserva($data);
 
 echo json_encode($reserva);
-
-
-// $reservas = Reserva::cargarReserva();
-
-
-// echo json_encode($reservas, JSON_PRETTY_PRINT);

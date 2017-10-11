@@ -15,7 +15,7 @@ $botones = array(
 );
 
 if( isset( $_GET['cat'] ) ){
-	$seccion = $_GET['cat']; //reg || recuperar
+	$seccion = $_GET['cat'];
 }else{
 	$seccion = 'reservas';
 }

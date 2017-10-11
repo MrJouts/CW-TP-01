@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <h1>
-          <i class="glyphicon glyphicon-film"></i>
+          <img src="img/logo.svg" alt="Hotel California">
           Hotel California
         </h1>
         <div class="form-wrapper">

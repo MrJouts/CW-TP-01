@@ -1,12 +1,21 @@
 <?php 
-
+/**
+ * Clase de conexión con la base en modo Singleton.
+ */
 class DBConnection
 {
+	/** @var PDO conexión a la base de datos */
 	private static $db;
 
 	private function __construct()
 	{}
 
+
+	/**
+	 * Retorna una instancia de PDO en modo Singleton
+	 *
+	 * @return PDO
+	 */
 	public static function getConnection()
 	{
 		if (DBConnection::$db === null) {

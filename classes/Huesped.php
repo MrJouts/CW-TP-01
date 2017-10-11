@@ -1,7 +1,7 @@
 <?php 
 
 /**
-* Huesped
+* Clase Huesped
 */
 class Huesped implements JsonSerializable
 {
@@ -14,6 +14,9 @@ class Huesped implements JsonSerializable
 	public $email;
 	public $telefono;
 
+	/**
+	 * Constructor de Huesped.
+	 */
 	function __construct($id = null)
 	{
 		if($id !== null) {
@@ -28,7 +31,9 @@ class Huesped implements JsonSerializable
 		}
 	}
 
-
+	/**
+	 * Implementación del método de la interface JsonSerializable.
+	 */
 	public function jsonSerialize()
 	{
 		return [
@@ -41,7 +46,11 @@ class Huesped implements JsonSerializable
 		];
 	}
 
-
+	/**
+	 * Carga todos los datos de una fila en un objeto
+	 *
+	 * @param array $fila
+	 */
 	public function loadDataFromArray($fila)
 	{
 		$this->id_huesped = $fila['ID_HUESPED'];
@@ -52,29 +61,11 @@ class Huesped implements JsonSerializable
 		$this->telefono = $fila['TELEFONO'];
 	}
 
+
 	/**
-	 * Retorna todas las reservas de la base de datos
+	 * Retorna el nombre completo de un huesped
 	 * 
-	 * @return array|Reservas[] 
 	 */
-	public static function getAll()
-	{
-		$db = DBConnection::getConnection();
-		$query = "SELECT * FROM reservas";
-		$stmt = $db->prepare($query);
-		$stmt->execute();
-		
-		$salida = [];
-
-		while($reserva = $stmt->fetch()) {
-			$obj = new Reserva;
-			$obj->loadDataFromArray($reserva);
-			$salida[] = $obj;
-		}
-		return $salida;
-	}
-
-
 	public static function getNombreCompleto($id = null) 
 	{
 		$db = DBConnection::getConnection();
@@ -91,22 +82,37 @@ class Huesped implements JsonSerializable
 		} else {
 			return null;
 		}
-
-
-
-
-		// $salida = [];
-
-		// while($fila = $stmt->fetch()) {
-		// 	$obj = new Huesped;
-		// 	$obj->loadDataFromArray($fila);
-		// 	$salida[] = $obj;
-		// }
-		// return $salida;
 	}
 
-	public static function test($id = null) {
-		echo $id;
+	/**
+	 * Carga la huesped en la base de datos
+	 * 
+	 */
+	public static function cargarHuesped($formData) 
+	{
+		$db = DBConnection::getConnection();
+		$query = "INSERT INTO huespedes (NOMBRE, APELLIDO, DIRECCION, EMAIL, TELEFONO)
+			VALUES (:nombre, :apellido, :direccion, :email, :telefono)";
+		$stmt = $db->prepare($query);
+		$exito = $stmt->execute([
+			'nombre' => $formData['NOMBRE'],
+			'apellido' => $formData['APELLIDO'],
+			'direccion' => $formData['DIRECCION'],
+			'email' => $formData['EMAIL'],
+			'telefono' => $formData['TELEFONO'],
+		]);
+
+		if($exito) {
+			$obj = new Huesped;
+
+			$formData['ID_HUESPED'] = $db->lastInsertId();
+			$obj->loadDataFromArray($formData);
+
+			return $obj->id_huesped;
+		} else {
+			echo 'error al cargar el huesped';
+		}
+
 	}
 
 }

@@ -1,7 +1,7 @@
 <?php 
 
 /**
-* Reservas
+* Clase Reservas
 */
 class Reserva implements JsonSerializable
 {
@@ -12,6 +12,9 @@ class Reserva implements JsonSerializable
 	public $fk_habitacion;
 	public $fk_huesped;
 
+	/**
+	 * Constructor de Resevas.
+	 */
 	function __construct($id = null)
 	{
 		if($id !== null) {
@@ -23,17 +26,12 @@ class Reserva implements JsonSerializable
 
 			$fila = $stmt->fetch();
 			$this->loadDataFromArray($fila);
-
-			/*$this->id_pelicula = $id;
-			$this->nombre = $fila['nombre'];
-			$this->genero = $fila['genero'];
-			$this->precio = $fila['precio'];
-			$this->fecha = $fila['fecha'];
-			$this->descripcion = $fila['descripcion'];*/
 		}
 	}
 
-
+	/**
+	 * Implementación del método de la interface JsonSerializable.
+	 */
 	public function jsonSerialize()
 	{
 		return [
@@ -45,7 +43,11 @@ class Reserva implements JsonSerializable
 		];
 	}
 
-
+	/**
+	 * Carga todos los datos de una fila en un objeto
+	 *
+	 * @param array $fila
+	 */
 	public function loadDataFromArray($fila)
 	{
 		$this->id_reserva = $fila['ID_RESERVA'];
@@ -81,33 +83,38 @@ class Reserva implements JsonSerializable
 		return $salida;
 	}
 
+	/**
+	 * Carga la reserva en la base de datos
+	 * 
+	 */
 	public static function cargarReserva($formData) 
 	{
 		$db = DBConnection::getConnection();
+
+		$FK_HUESPED = Huesped::cargarHuesped($formData);
+
 		$query = "INSERT INTO reservas (FECHA_INICIO, FECHA_SALIDA, FKHABITACION, FKHUESPED)
 			VALUES (:fecha_inicio, :fecha_salida, :fk_habitacion, :fk_huesped)";
 		$stmt = $db->prepare($query);
 		$exito = $stmt->execute([
 			'fecha_inicio' => $formData['FECHA_INICIO'],
 			'fecha_salida' => $formData['FECHA_SALIDA'],
-			'fk_habitacion' => '1',
-			'fk_huesped' => '1'
+			'fk_habitacion' => $formData['HABITACION'],
+			'fk_huesped' => $FK_HUESPED,
 		]);
 
 		if($exito) {
 			$obj = new Reserva;
-			// Obtenemos el id del
-			// registro que insertamos.
+
 			$formData['ID_RESERVA'] = $db->lastInsertId();
-			$formData['FKHABITACION'] = '1';
-			$formData['FKHUESPED'] = '1';
+			$formData['FKHABITACION'] = $formData['HABITACION'];
+			$formData['FKHUESPED'] = $FK_HUESPED;
 			$obj->loadDataFromArray($formData);
 
 			return $obj;
 
-
 		} else {
-			echo "error";
+			echo "error al cargar la reserva";
 		}
 	}
 

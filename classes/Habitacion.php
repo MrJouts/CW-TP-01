@@ -58,7 +58,7 @@ class Habitacion implements JsonSerializable
 
 			return $habitacion->numero_habitacion;
 		} else {
-			return null;
+			return "Error al obtener el numero de la habitacion";
 		}
 	}
 

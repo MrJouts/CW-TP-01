@@ -48,10 +48,10 @@
     <script src="js/ajax-request.js"></script>
     <script src="js/script.js"></script>
 
-    <!-- <script src="js/cargarHabitacion.js"></script> -->
-
     <script src="js/login.js"></script>
     <script src="js/reservas-leer.js"></script>
     <script src="js/reservas-alta.js"></script>
+    <script src="js/reservas-editar.js"></script>
+    <script src="js/reservas-eliminar.js"></script>
   </body>
 </html>

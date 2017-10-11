@@ -1,5 +1,8 @@
 <?php 
 
+/**
+* Clase Usuario
+*/
 class Usuario implements JsonSerializable
 {
 	public $id_usuario;
@@ -9,6 +12,9 @@ class Usuario implements JsonSerializable
 	public $email;
 	public $password;
 
+	/**
+	 * Implementación del método de la interface JsonSerializable.
+	 */
 	public function jsonSerialize()
 	{
 		return [
@@ -21,6 +27,11 @@ class Usuario implements JsonSerializable
 		];
 	}
 
+	/**
+	 * Carga todos los datos de una fila en un objeto
+	 *
+	 * @param array $row
+	 */
 	public function loadDataFromArray($row)
 	{
 		$this->id_usuario = $row['ID'];
