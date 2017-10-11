@@ -111,7 +111,7 @@ class Reserva implements JsonSerializable
 			$formData['FKHUESPED'] = $FK_HUESPED;
 			$obj->loadDataFromArray($formData);
 
-			return $obj;
+			return $obj; 
 
 		} else {
 			echo "error al cargar la reserva";
