@@ -1,7 +1,9 @@
 /* Archivo Ajax Request */
 
+// creo el objeto hc
 var hc = {};
 
+// creo el ajax
 hc.ajax = function(options) {
 	var defaults = {
 		method: 'GET',
@@ -55,3 +57,20 @@ hc.merge = function(obj1, obj2) {
 	}
 	return salida;
 }
+
+hc.crearMensaje = function(options) {
+	mensaje = '';
+	if (options.estado == 'success') {
+		mensaje += '<div class="alert alert-success alert-dismissible show" role="alert"><span class="glyphicon glyphicon-ok"></span> ';
+	} else {
+		mensaje += '<div class="alert alert-danger alert-dismissible show" role="alert"><span class="glyphicon glyphicon-warning-sign"></span> ';
+	}
+	mensaje += '<button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+	mensaje += '<span aria-hidden="true">&times;</span>';
+	mensaje += '</button>';
+	mensaje += options.mensaje;
+	mensaje += '</div>'
+	hc.$('mensaje').innerHTML = mensaje;
+}
+
+

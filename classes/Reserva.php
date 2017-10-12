@@ -20,7 +20,7 @@ class Reserva implements JsonSerializable
 		if($id !== null) {
 			$db = DBConnection::getConnection();
 			$query = "SELECT * FROM reservas
-						WHERE ID_RESERVAS = ?";
+						WHERE ID_RESERVA = ?";
 			$stmt = $db->prepare($query);
 			$stmt->execute([$id]);
 
@@ -110,12 +110,77 @@ class Reserva implements JsonSerializable
 			$formData['FKHABITACION'] = $formData['HABITACION'];
 			$formData['FKHUESPED'] = $FK_HUESPED;
 			$obj->loadDataFromArray($formData);
+			$obj->huesped = $formData['NOMBRE'];
 
 			return $obj; 
 
 		} else {
-			echo "error al cargar la reserva";
+			return null;
 		}
 	}
 
+
+	public static function getReservaCompleta($id = null) 
+	{
+		if($id !== null) {
+			$db = DBConnection::getConnection();
+			$query = "SELECT * FROM reservas
+						WHERE ID_RESERVA = ?";
+			$stmt = $db->prepare($query);
+			$stmt->execute([$id]);
+
+			$salida = [];
+
+			$fila = $stmt->fetch();
+
+			$objReserva = new Reserva;
+			$objReserva->loadDataFromArray($fila);
+			$objHabitacion = new Habitacion($objReserva->fk_habitacion);
+			$objHuesped = new Huesped($objReserva->fk_huesped);
+
+			$salida['reserva'] = $objReserva;
+			$salida['habitacion'] = $objHabitacion;
+			$salida['huesped'] = $objHuesped;
+
+			return $salida;
+		}
+	} 
+
+	public static function editarReserva($id = null, $formData) 
+	{
+		if($id !== null) {
+
+			Huesped::editarHuesped($formData['ID_HUESPED'],$formData);
+
+			$db = DBConnection::getConnection();
+			$query = "UPDATE reservas
+				SET FECHA_INICIO 		= :fecha_inicio,
+						FECHA_SALIDA 		= :fecha_salida,
+						FKHABITACION  	= :fk_habitacion,
+						FKHUESPED				= :fk_huesped
+				WHERE ID_RESERVA = :id";
+
+
+			$stmt = $db->prepare($query);
+
+			$exito = $stmt->execute([
+				'fecha_inicio' => $formData['FECHA_INICIO'],
+				'fecha_salida' => $formData['FECHA_SALIDA'],
+				'fk_habitacion' => $formData['HABITACION'],
+				'fk_huesped' => $formData['ID_HUESPED'],
+				'id' => $id,
+			]);
+
+			if ($exito) {
+				return "ok";
+			} else {
+				return "error";
+			}
+		}
+	} 
+
+
 }
+
+
+

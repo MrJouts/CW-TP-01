@@ -10,7 +10,7 @@ class Huesped implements JsonSerializable
 	public $nombre;
 	public $apellido;
 	public $nombreCompleto;
-	public $dierccion;
+	public $direccion;
 	public $email;
 	public $telefono;
 
@@ -114,5 +114,38 @@ class Huesped implements JsonSerializable
 		}
 
 	}
+
+	public static function editarHuesped($id,$formData) 
+	{
+		if($id !== null) {
+			$db = DBConnection::getConnection();
+			$query = "UPDATE huespedes
+				SET NOMBRE 			= :nombre,
+						APELLIDO 		= :apellido,
+						DIRECCION  	= :direccion,
+						EMAIL				= :email,
+						TELEFONO		= :telefono
+				WHERE ID_HUESPED = :id";
+
+
+			$stmt = $db->prepare($query);
+			$exito = $stmt->execute([
+				'nombre' => $formData['NOMBRE'],
+				'apellido' => $formData['APELLIDO'],
+				'direccion' => $formData['DIRECCION'],
+				'email' => $formData['EMAIL'],
+				'telefono' => $formData['TELEFONO'],
+				'id' => $id,
+			]);
+
+			if ($exito) {
+				return "ok";
+			} else {
+				return "error";
+			}
+		}
+	} 
+
+
 
 }

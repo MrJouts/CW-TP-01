@@ -62,6 +62,27 @@ class Habitacion implements JsonSerializable
 		}
 	}
 
+	/**
+	 * Retorna todas las habitaciones
+	 *
+	 * @return array|Habitacion[]
+	 */
+	public static function getAll() 
+	{
+		$db = DBConnection::getConnection();
+		$query = "SELECT * FROM habitaciones";
+		$stmt = $db->prepare($query);
+		$stmt->execute();
+		
+		$salida = [];
+
+		while($row = $stmt->fetch()) {
+			$obj = new Habitacion;
+			$obj->loadDataFromArray($row);
+			$salida[] = $obj;
+		}
+		return $salida;
+	}
 
 }
 
