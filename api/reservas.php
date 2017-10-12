@@ -5,7 +5,11 @@ header('Content-Type: application/json; charset=utf-8');
 
 
 if($_SERVER['REQUEST_METHOD'] == "GET") {
-	require 'reservas-leer.php';
+	if(isset($_GET['id'])) {
+		require 'reservas-leer-1.php';
+	} else {
+		require 'reservas-leer.php';
+	}
 } else if($_SERVER['REQUEST_METHOD'] == "POST") {
 	require 'reservas-alta.php';
 } else if($_SERVER['REQUEST_METHOD'] == "PUT") {

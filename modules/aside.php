@@ -12,7 +12,7 @@
 
 		  <li role="presentation" <?php echo $activo; ?>>
 		  	<a href="index.php?cat=<?php echo $link; ?>">
-		  		<?php echo $txt; ?>
+		  		<span class="<?= $txt[1] ?>"></span><?php echo $txt[0]; ?>
 		  	</a>
 		  </li>
 

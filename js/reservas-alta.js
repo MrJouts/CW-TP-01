@@ -17,9 +17,12 @@ function cargarReserva(nuevaReserva) {
 		salida += '<fieldset>';
 		salida += '<legend>Habitación:</legend>';
 		salida += '<div class="form-group"><label for="numeroHabitacion" class="col-sm-2 control-label">Numero habitación: </label><div class="col-sm-4"><select class="form-control" id="numeroHabitacion" name="numeroHabitacion">';
-		salida+= '<option value="1">101</option>';
-		salida+= '<option value="2">102</option>';
-		salida+= '<option value="3">103</option>';
+		for (var i = 0; i < hc.habitaciones.length; i++) {
+			var hab = hc.habitaciones[i];
+			salida+= '<option value="' + hab.id_habitacion + '">' + hab.numero_habitacion + '</option>';
+		}
+		//salida+= '<option value="2">102</option>';
+		//salida+= '<option value="3">103</option>';
 		salida+= '</select></div></div>';
 		salida += '</fieldset>';
 
@@ -72,10 +75,10 @@ function cargarReserva(nuevaReserva) {
 
 					console.log(respuesta);
 					
-					mostrarReservas()
+					mostrarReservas();
 					if(respuesta.id_reserva) {
 						hc.$('mensaje').innerHTML = "La reserva se cargó satisfactoriamente";
-						location = "index.php?cat=reservas";
+						//location = "index.php?cat=reservas";
 					}
 				}
 			});

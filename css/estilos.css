@@ -8,6 +8,11 @@ body {
   color: #444;
 }
 
+body > .wrapper {
+  position: relative;
+  min-height: 720px;
+}
+
 h1, h2, h3 {
   font-family: "Verdana";
   margin: 0;
@@ -50,6 +55,8 @@ h1, h2, h3 {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 200px;
   height: 100%;
   padding-top: 50px;

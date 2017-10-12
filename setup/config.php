@@ -9,9 +9,9 @@ mysqli_set_charset($db, 'utf8');
 
 //botones
 $botones = array( 	
-	'reservas' => 'Reservas', 
-	'habitaciones' => 'Habitaciones', 
-	'perfil' => 'Perfil' 
+	'reservas' => ['Reservas','glyphicon glyphicon-star'], 
+	'habitaciones' => ['Habitaciones','glyphicon glyphicon-home'], 
+	'perfil' => ['Perfil','glyphicon glyphicon-user'] 
 );
 
 if( isset( $_GET['cat'] ) ){
@@ -24,7 +24,8 @@ $hay_error = false;
 //switch
 switch ( $seccion ) {
 	case 'reservas': 
-		$archivo = 'reservas.php'; 
+		$archivo = 'reservas.php';
+
 	break;
 	case 'habitaciones': 
 		$archivo = 'habitaciones.php'; 
