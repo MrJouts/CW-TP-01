@@ -146,6 +146,25 @@ class Huesped implements JsonSerializable
 		}
 	} 
 
+	public static function eliminarHuesped($id = null)
+	{
+		if($id !== null) {
+
+			$db = DBConnection::getConnection();
+			$query = "DELETE FROM huespedes WHERE ID_HUESPED = ?";
+			
+			$stmt = $db->prepare($query);
+
+			$exito = $stmt->execute([$id]);
+
+			if ($exito) {
+				return "registro borrado";
+			} else {
+				return "error";
+			}
+		}
+	}
+
 
 
 }

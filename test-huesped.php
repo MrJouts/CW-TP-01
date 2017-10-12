@@ -72,10 +72,25 @@ require_once 'autoload.php';
 // echo '</pre>';
 
 
-$reservaCompleta = Reserva::getReservaCompleta('2');
+// $reservaCompleta = Reserva::getReservaCompleta('2');
+
+
+
+// echo '<pre>';
+// print_r($reservaCompleta);
+// echo '</pre>';
+
+
+
+
+
+$borrarHuesped = Huesped::eliminarHuesped('1');
 
 
 
 echo '<pre>';
-print_r($reservaCompleta);
+print_r($borrarHuesped);
 echo '</pre>';
+
+
+

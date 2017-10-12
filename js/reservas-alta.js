@@ -4,13 +4,10 @@
  */
 hc.cargarReserva = function(nuevaReserva) {
 
-
-
 	hc.ajax({
 		url: 'api/habitaciones-leer.php',
 		success: function(rta) {
 			hc.habitaciones = JSON.parse(rta);
-			console.log(hc.habitaciones);
 
 				nuevaReserva.addEventListener('click', function(ev) {
 				// creo la variable mensaje
@@ -24,11 +21,11 @@ hc.cargarReserva = function(nuevaReserva) {
 				salida += '<form  id="cargarReserva" class="form-horizontal">';
 				salida += '<fieldset>';
 				salida += '<legend>Huesped:</legend>';
-				salida += '<div class="form-group"><label for="nombre" class="col-sm-2 control-label">Nombre: </label><div class="col-sm-4"><input type="text" class="form-control" id="nombre" name="nombre" value="Emiliano"></div></div>';
-				salida += '<div class="form-group"><label for="apellido" class="col-sm-2 control-label">Apellido: </label><div class="col-sm-4"><input type="text" class="form-control" id="apellido" name="apellido" value="Hotes"></div></div>';
-				salida += '<div class="form-group"><label for="direccion" class="col-sm-2 control-label">Direccion: </label><div class="col-sm-4"><input type="text" class="form-control" id="direccion" name="direccion" value="Calle 123"></div></div>';
-				salida += '<div class="form-group"><label for="telefono" class="col-sm-2 control-label">Teléfono: </label><div class="col-sm-4"><input type="number" class="form-control" id="telefono" name="telefono" value="15923902"></div></div>';
-				salida += '<div class="form-group"><label for="mail" class="col-sm-2 control-label">E-mail: </label><div class="col-sm-4"><input type="text" class="form-control" id="mail" name="mail" value="emi@mail.com"></div></div>';
+				salida += '<div class="form-group"><label for="nombre" class="col-sm-2 control-label">Nombre: </label><div class="col-sm-4"><input type="text" class="form-control" id="nombre" name="nombre"></div></div>';
+				salida += '<div class="form-group"><label for="apellido" class="col-sm-2 control-label">Apellido: </label><div class="col-sm-4"><input type="text" class="form-control" id="apellido" name="apellido"></div></div>';
+				salida += '<div class="form-group"><label for="direccion" class="col-sm-2 control-label">Direccion: </label><div class="col-sm-4"><input type="text" class="form-control" id="direccion" name="direccion"></div></div>';
+				salida += '<div class="form-group"><label for="telefono" class="col-sm-2 control-label">Teléfono: </label><div class="col-sm-4"><input type="number" class="form-control" id="telefono" name="telefono"></div></div>';
+				salida += '<div class="form-group"><label for="mail" class="col-sm-2 control-label">E-mail: </label><div class="col-sm-4"><input type="text" class="form-control" id="mail" name="mail"></div></div>';
 				salida += '</fieldset>';
 
 				salida += '<fieldset>';
@@ -45,8 +42,8 @@ hc.cargarReserva = function(nuevaReserva) {
 
 				salida += '<fieldset>';
 				salida += '<legend>Horario:</legend>';
-				salida += '<div class="form-group"><label for="fechaEntrada" class="col-sm-2 control-label">Fecha de entrada: </label><div class="col-sm-4"><input type="date" class="form-control" id="fechaEntrada" name="fechaEntrada" value="2017-12-05"></div></div>';
-				salida += '<div class="form-group"><label for="fechaSalida" class="col-sm-2 control-label">Fecha de salida: </label><div class="col-sm-4"><input type="date" class="form-control" id="fechaSalida" name="fechaSalida" value="2017-12-05"></div></div>';
+				salida += '<div class="form-group"><label for="fechaEntrada" class="col-sm-2 control-label">Fecha de entrada: </label><div class="col-sm-4"><input type="date" class="form-control" id="fechaEntrada" name="fechaEntrada"></div></div>';
+				salida += '<div class="form-group"><label for="fechaSalida" class="col-sm-2 control-label">Fecha de salida: </label><div class="col-sm-4"><input type="date" class="form-control" id="fechaSalida" name="fechaSalida"></div></div>';
 				salida += '</fieldset>';
 
 				salida += '<div class="form-group"><div class="col-sm-offset-2 col-sm-4"><button type="submit" class="btn btn-default">Cargar reserva</button></div></div>';
@@ -80,8 +77,6 @@ hc.cargarReserva = function(nuevaReserva) {
 						FECHA_SALIDA: fechaSalida.value
 					};
 
-					console.log(datos);
-
 					hc.ajax({
 						method: "POST",
 						url: 'api/reservas-alta.php',
@@ -95,8 +90,7 @@ hc.cargarReserva = function(nuevaReserva) {
 								})
 							} else {
 								var respuesta = JSON.parse(rta);
-								//console.log(rta);
-								//console.log(respuesta);
+
 								hc.crearMensaje({
 									mensaje: 'Se ha cargado una nueva reserva',
 									estado: 'success'

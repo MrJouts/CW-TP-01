@@ -46,7 +46,6 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/ajax-request.js"></script>
-    <script src="js/script.js"></script>
 
     <script src="js/login.js"></script>
     <script src="js/reservas-leer.js"></script>

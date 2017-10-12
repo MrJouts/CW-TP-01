@@ -179,8 +179,24 @@ class Reserva implements JsonSerializable
 		}
 	} 
 
+	public static function eliminarReserva($id = null, $formData )
+	{
+		if($id !== null) {
+
+			$db = DBConnection::getConnection();
+			$query = "DELETE FROM reservas WHERE ID_RESERVA = ?";
+			
+			$stmt = $db->prepare($query);
+
+			$exito = $stmt->execute([$id]);
+
+			if ($exito) {
+				Huesped::eliminarHuesped($formData['ID_HUESPED']);
+				return "registro borrado";
+			} else {
+				return "error";
+			}
+		}
+	}
 
 }
-
-
-

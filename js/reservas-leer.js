@@ -39,10 +39,8 @@ window.addEventListener('DOMContentLoaded', function() {
 					salida += '<td>' + reservas[i].fecha_salida	 + '</td>';
 					salida += '<td>';
 					salida += '<button id="reservaEditar" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" data-id="'+reservas[i].id_reserva+'" title="Editar"><i class="glyphicon glyphicon-pencil"></i> <span class="sr-only">Editar</span></button> ';
-
-					// salida += '<a id="reservaEditar" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Editar"><i class="glyphicon glyphicon-pencil"></i> <span class="sr-only">Editar</span></a> ';
 					
-					salida += '<button id="reservaEliminar" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Borrar"><i class="glyphicon glyphicon-remove"></i> <span class="sr-only">Borrar</span></button>';
+					salida += '<button id="reservaEliminar" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" data-id="'+reservas[i].id_reserva+'" title="Borrar"><i class="glyphicon glyphicon-remove"></i> <span class="sr-only">Borrar</span></button>';
 					salida += "</td>";
 					salida += "</tr>";
 				}
@@ -58,7 +56,7 @@ window.addEventListener('DOMContentLoaded', function() {
 					hc.$('getReserva').innerHTML = salida;
 					hc.cargarReserva(nuevaReserva);
 					hc.editarReserva(reservaEditar);
-					eliminarReserva(reservaEliminar);
+					hc.eliminarReserva(reservaEliminar);
 				}
 
 			}
