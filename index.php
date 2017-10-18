@@ -1,14 +1,8 @@
-<?php include 'setup/config.php'; ?>
-
-  <?php
-
-  require 'autoload.php';
-
+<?php 
   
-    echo "Hola " . Auth::getUser()->apellido;
-
-  ?>
-
+  require 'setup/config.php';
+  require 'autoload.php';
+ ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -27,7 +21,7 @@
     
     <div class="wrapper">
 
-    <?php if (!isset($_SESSION['nombre_usuario'])) {
+    <?php if (!isset($_SESSION['usuario'])) {
       include 'modules/login.php';
     }  else {
     ?>

@@ -27,6 +27,7 @@ hc.login = function() {
 				url: 'api/login.php',
 				data: JSON.stringify(data),
 				success: function(rta) {
+					console.log(rta);
 					var data = JSON.parse(rta);
 					if (!data) {
 						hc.$('salida').innerHTML = 'Los datos ingresados son incorrectos';
@@ -34,7 +35,7 @@ hc.login = function() {
 
 						console.log(data);
 
-						//location = "index.php?cat=reservas";
+						location = "index.php?cat=reservas";
 					} // else close
 
 				} // success: close

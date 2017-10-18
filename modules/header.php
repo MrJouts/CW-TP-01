@@ -17,7 +17,7 @@
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	          	<?php echo $_SESSION['nombre'] .' ' . $_SESSION['apellido']; ?>
+	          	<?php echo Auth::getUser()->nombre .' ' . Auth::getUser()->apellido; ?>
 	          </a>
 	          <ul class="dropdown-menu">
 	            <!-- <li><a href="#"><i class="glyphicon glyphicon-user"></i> Perfíl</a></li> -->
