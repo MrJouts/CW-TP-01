@@ -1,5 +1,15 @@
 <?php include 'setup/config.php'; ?>
 
+  <?php
+
+  require 'autoload.php';
+
+  
+    echo "Hola " . Auth::getUser()->apellido;
+
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>

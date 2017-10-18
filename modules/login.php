@@ -7,7 +7,6 @@
           Hotel California
         </h1>
         <div class="form-wrapper">
-
           <form id="login">
             <div class="form-group">
               <label for="usuario">Nombre de usuario o dirección de email</label>

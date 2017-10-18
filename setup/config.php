@@ -1,8 +1,5 @@
 <?php 
 
-//sesiones
-session_start();
-
 //base de datos
 $db = mysqli_connect('localhost', 'root', '', 'hotel_db');
 mysqli_set_charset($db, 'utf8');

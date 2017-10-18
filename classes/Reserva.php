@@ -5,7 +5,6 @@
 */
 class Reserva implements JsonSerializable
 {
-	
 	public $id_reserva;
 	public $fecha_inicio;
 	public $fecha_salida;

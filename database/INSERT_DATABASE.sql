@@ -1,6 +1,6 @@
 USE hotel_db;
 
-INSERT INTO usuario (NOMBRE, APELLIDO, NOMBRE_USUARIO, EMAIL, PASSWORD)
+INSERT INTO usuarios (NOMBRE, APELLIDO, NOMBRE_USUARIO, EMAIL, PASSWORD)
 VALUES 
 	('Emiliano', 'Hotes', 'eh', 'emiliano.hotes@davinci.edu.ar', '1234'),
 	('Santiago', 'Gallino', 'sg', 'santiago.gallino@davinci.edu.ar', '1234');

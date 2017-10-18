@@ -42,42 +42,40 @@ class Usuario implements JsonSerializable
 		$this->password = $row['PASSWORD'];
 	}
 
-	/*
-	 * Validacion de datos
+	/**
+	 * Realiza una busqueda en la base de datos que coincida con los datos 
+	 * ingresados por el usuario.
+	 *
+	 * @param string $usuario
+	 * @param string $password
+	 * @return Usuario|null
 	 */
-	public static function userValidate($usuario = null, $password = null) 
+	public static function getByUserAndPass($usuario, $password)
 	{
-		if ($usuario !== null && $password !== null) {
-			$db = DBConnection::getConnection();
-			$query = "SELECT * 
-				FROM usuario 
-				WHERE ( 
-					NOMBRE_USUARIO = ?
-					OR EMAIL = ?
-				)
-				AND PASSWORD = ?";
-			$stmt = $db->prepare($query);
-			$stmt->execute([$usuario, $usuario, $password]);
+		$db = DBConnection::getConnection();
+		$query = "SELECT * 
+			FROM usuarios 
+			WHERE ( 
+				NOMBRE_USUARIO = :user
+				OR EMAIL = :user
+			)
+			AND PASSWORD = :pass
+			LIMIT 1";
+		$stmt = $db->prepare($query);
 
-			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$stmt->execute([
+			'user' => $usuario,
+			'pass' => $password
+		]);
 
-			if ($row) {
+		if($row = $stmt->fetch()) {
+			$user = new Usuario;
+			$user->loadDataFromArray($row);
 
-				$_SESSION['nombre'] = $row['NOMBRE'];
-				$_SESSION['apellido'] = $row['APELLIDO'];
-				$_SESSION['nombre_usuario'] = $row['NOMBRE_USUARIO'];
-				$_SESSION['email'] = $row['EMAIL'];
-				$_SESSION['password'] = $row['PASSWORD'];
-
-				$obj = new Usuario;
-				$obj->loadDataFromArray($row);
-				echo json_encode($obj);
-				
-			} else {
-				echo 'Los datos ingresados son incorrectos';
-			}		
+			return $user;
+		} else {
+			return null;
 		}
 	}
-
 
 }
