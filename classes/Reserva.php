@@ -178,7 +178,7 @@ class Reserva implements JsonSerializable
 		}
 	} 
 
-	public static function eliminarReserva($id = null, $formData )
+	public static function eliminarReserva( $id = null, $formData )
 	{
 		if($id !== null) {
 
@@ -193,7 +193,7 @@ class Reserva implements JsonSerializable
 				Huesped::eliminarHuesped($formData['ID_HUESPED']);
 				return "registro borrado";
 			} else {
-				return "error";
+				return null;
 			}
 		}
 	}

@@ -3,7 +3,6 @@
 header('Content-Type: application/json; charset=utf-8');
 
 
-
 if($_SERVER['REQUEST_METHOD'] == "GET") {
 	if(isset($_GET['id'])) {
 		require 'reservas-leer-1.php';

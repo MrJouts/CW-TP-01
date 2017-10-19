@@ -160,7 +160,7 @@ class Huesped implements JsonSerializable
 			if ($exito) {
 				return "registro borrado";
 			} else {
-				return "error";
+				return null;
 			}
 		}
 	}

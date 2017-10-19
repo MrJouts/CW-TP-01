@@ -1,4 +1,5 @@
 <?php 
+
 /**
  * Clase de conexión con la base en modo Singleton.
  */

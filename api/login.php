@@ -1,7 +1,7 @@
 <?php
 
-include '../setup/config.php';
-include '../autoload.php';
+require_once '../setup/config.php';
+require_once '../autoload.php';
 
 $entry = file_get_contents('php://input');
 $loginData = json_decode($entry, true); 

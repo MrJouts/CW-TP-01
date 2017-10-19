@@ -32,9 +32,6 @@ hc.login = function() {
 					if (!data) {
 						hc.$('salida').innerHTML = 'Los datos ingresados son incorrectos';
 					} else {
-
-						console.log(data);
-
 						location = "index.php?cat=reservas";
 					} // else close
 
